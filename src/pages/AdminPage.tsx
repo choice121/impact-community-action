@@ -18,6 +18,7 @@ import {
   TrendingUp,
   History,
   LifeBuoy,
+  Globe,
 } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 import { useAuth } from '../context/AuthContext';
@@ -31,9 +32,10 @@ import {
 import { formatCurrency, formatDate } from '../lib/format';
 import { ImageKitUploader } from '../components/admin/ImageKitUploader';
 import { CsvDonationImporter } from '../components/admin/CsvDonationImporter';
+import { ContentScraperImporter } from '../components/admin/ContentScraperImporter';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
-type AdminTab = 'analytics' | 'projects' | 'casework' | 'stories' | 'finance' | 'subscribers' | 'audit';
+type AdminTab = 'analytics' | 'scraper' | 'projects' | 'casework' | 'stories' | 'finance' | 'subscribers' | 'audit';
 
 export const AdminPage: React.FC = () => {
   const { profile, user } = useAuth();
@@ -185,6 +187,7 @@ export const AdminPage: React.FC = () => {
           <nav className="flex space-x-2 sm:space-x-6 overflow-x-auto no-scrollbar text-xs font-bold py-2">
             {[
               { id: 'analytics', label: 'Executive Analytics', icon: BarChart3 },
+              { id: 'scraper', label: 'Web Scraper & Content Importer', icon: Globe },
               { id: 'projects', label: 'Projects & Milestones CMS', icon: FolderPlus },
               { id: 'casework', label: 'Emergency Casework Desk', icon: LifeBuoy },
               { id: 'stories', label: 'Story Review & Consent Queue', icon: FileCheck },
@@ -267,7 +270,14 @@ export const AdminPage: React.FC = () => {
           </div>
         )}
 
-        {/* 2. PROJECTS & MILESTONES CMS */}
+        {/* 2. UNIVERSAL WEB CONTENT SCRAPER & AUTO-IMPORTER */}
+        {activeTab === 'scraper' && (
+          <div className="space-y-8 animate-in fade-in duration-200">
+            <ContentScraperImporter />
+          </div>
+        )}
+
+        {/* 3. PROJECTS & MILESTONES CMS */}
         {activeTab === 'projects' && (
           <div className="space-y-8 animate-in fade-in duration-200">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

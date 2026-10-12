@@ -13,22 +13,23 @@ import {
   Check,
 } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_PROJECTS, DEMO_PILLARS, DEMO_STORIES } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
 import { IKImage } from '../components/common/IKImage';
 import { formatCurrency, formatDate } from '../lib/format';
 
 export const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const project = DEMO_PROJECTS.find((p) => p.slug === slug || p.id === slug);
+  const { projects, pillars, stories } = useLiveContent();
+  const project = projects.find((p) => p.slug === slug || p.id === slug);
   const [copied, setCopied] = useState(false);
 
   if (!project) {
     return <Navigate to="/projects" replace />;
   }
 
-  const pillar = DEMO_PILLARS.find((p) => p.id === project.pillarId);
+  const pillar = pillars.find((p) => p.id === project.pillarId);
   const percentFunded = Math.min(100, Math.round((project.raisedCents / project.goalCents) * 100));
-  const relatedStories = DEMO_STORIES.filter((s) => s.relatedProjectSlug === project.slug);
+  const relatedStories = stories.filter((s) => s.relatedProjectSlug === project.slug);
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);

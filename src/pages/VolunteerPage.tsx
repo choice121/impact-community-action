@@ -13,11 +13,13 @@ import {
   FileCheck,
 } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_VOLUNTEER_OPPORTUNITIES, DEMO_PILLARS } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
+import { DEMO_PILLARS } from '../demo/demoData';
 import { VolunteerOpportunity } from '../types';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 export const VolunteerPage: React.FC = () => {
+  const { volunteerOpportunities } = useLiveContent();
   const [selectedPillar, setSelectedPillar] = useState('all');
   const [selectedState, setSelectedState] = useState('all');
   const [signingUpFor, setSigningUpFor] = useState<VolunteerOpportunity | null>(null);
@@ -30,9 +32,9 @@ export const VolunteerPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
 
-  const availableStates = Array.from(new Set(DEMO_VOLUNTEER_OPPORTUNITIES.map((v) => v.state))).sort();
+  const availableStates = Array.from(new Set(volunteerOpportunities.map((v) => v.state))).sort();
 
-  const filteredOpportunities = DEMO_VOLUNTEER_OPPORTUNITIES.filter((opp) => {
+  const filteredOpportunities = volunteerOpportunities.filter((opp) => {
     const matchPillar = selectedPillar === 'all' || opp.pillarId === selectedPillar;
     const matchState = selectedState === 'all' || opp.state === selectedState;
     return matchPillar && matchState;

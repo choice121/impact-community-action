@@ -1,18 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import { DEMO_PILLARS, DEMO_PROJECTS, DEMO_STORIES } from '../demo/demoData';
-import { Pillar, Project, Story } from '../types';
+import { DEMO_PILLARS } from '../demo/demoData';
+import { ContentStore } from '../lib/contentStore';
+import { Pillar, Project, Story, CommunityEvent, NewsPost, VolunteerOpportunity } from '../types';
 
 export function useLiveContent() {
   const [pillars, setPillars] = useState<Pillar[]>(DEMO_PILLARS);
-  const [projects, setProjects] = useState<Project[]>(DEMO_PROJECTS);
-  const [stories, setStories] = useState<Story[]>(DEMO_STORIES);
+  const [projects, setProjects] = useState<Project[]>(() => ContentStore.getProjects());
+  const [stories, setStories] = useState<Story[]>(() => ContentStore.getStories());
+  const [events, setEvents] = useState<CommunityEvent[]>(() => ContentStore.getEvents());
+  const [news, setNews] = useState<NewsPost[]>(() => ContentStore.getNews());
+  const [volunteerOpportunities, setVolunteerOpportunities] = useState<VolunteerOpportunity[]>(() =>
+    ContentStore.getVolunteerOpportunities()
+  );
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const syncLocalStore = useCallback(() => {
+    setProjects(ContentStore.getProjects());
+    setStories(ContentStore.getStories());
+    setEvents(ContentStore.getEvents());
+    setNews(ContentStore.getNews());
+    setVolunteerOpportunities(ContentStore.getVolunteerOpportunities());
+  }, []);
+
   useEffect(() => {
+    // Listen for local ContentStore updates
+    const unsubscribeStore = ContentStore.subscribe(() => {
+      syncLocalStore();
+    });
+
     if (!isSupabaseConfigured) {
       setIsLoading(false);
-      return;
+      return unsubscribeStore;
     }
 
     async function loadData() {
@@ -77,7 +96,12 @@ export function useLiveContent() {
             updates: [],
             createdAt: p.created_at,
           }));
-          setProjects(mappedProjects);
+          
+          // Merge with custom stored projects (custom projects take precedence)
+          const custom = ContentStore.getProjects().filter((cp) => cp.id.startsWith('scraped-') || cp.id.startsWith('custom-'));
+          const existingIds = new Set(custom.map(c => c.id));
+          const combined = [...custom, ...mappedProjects.filter(mp => !existingIds.has(mp.id))];
+          setProjects(combined);
         }
 
         // Load Stories
@@ -108,10 +132,14 @@ export function useLiveContent() {
             videoUrl: s.video_url,
             consentApproved: s.consent_status === 'approved',
           }));
-          setStories(mappedStories);
+          
+          const custom = ContentStore.getStories().filter((cs) => cs.id.startsWith('scraped-') || cs.id.startsWith('custom-'));
+          const existingIds = new Set(custom.map(c => c.id));
+          const combined = [...custom, ...mappedStories.filter(ms => !existingIds.has(ms.id))];
+          setStories(combined);
         }
       } catch (err) {
-        console.warn('Could not load live Supabase content, using cached baseline', err);
+        console.warn('Could not load live Supabase content, using ContentStore baseline', err);
       } finally {
         setIsLoading(false);
       }
@@ -119,7 +147,7 @@ export function useLiveContent() {
 
     loadData();
 
-    // Subscribe to realtime project updates
+    // Subscribe to realtime project updates if Supabase configured
     const projectSub = supabase
       .channel('projects_realtime')
       .on(
@@ -132,9 +160,19 @@ export function useLiveContent() {
       .subscribe();
 
     return () => {
+      unsubscribeStore();
       supabase.removeChannel(projectSub);
     };
-  }, []);
+  }, [syncLocalStore]);
 
-  return { pillars, projects, stories, isLoading };
+  return {
+    pillars,
+    projects,
+    stories,
+    events,
+    news,
+    volunteerOpportunities,
+    isLoading,
+    refresh: syncLocalStore,
+  };
 }

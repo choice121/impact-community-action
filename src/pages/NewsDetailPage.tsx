@@ -2,13 +2,14 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Tag, Share2, ShieldCheck } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_NEWS } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
 import { IKImage } from '../components/common/IKImage';
 import { formatDate } from '../lib/format';
 
 export const NewsDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const article = DEMO_NEWS.find((n) => n.slug === slug || n.id === slug);
+  const { news } = useLiveContent();
+  const article = news.find((n) => n.slug === slug || n.id === slug);
 
   if (!article) {
     return <Navigate to="/news" replace />;

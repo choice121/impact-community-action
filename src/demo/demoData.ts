@@ -396,6 +396,80 @@ export const DEMO_PROJECTS: Project[] = [
     updates: [],
     createdAt: '2026-05-15',
   },
+  {
+    id: 'proj-weatherization-wap',
+    slug: 'tri-county-home-weatherization-relief',
+    title: 'Tri-County Home Weatherization & Heat Pump Emergency Relief',
+    tagline: 'Sealing air bypasses, blowing attic insulation, and repairing broken furnaces for low-income elders and working families.',
+    summary: 'Direct diagnostic blower-door testing, attic insulation blowing, and heating equipment retrofits across 240 vulnerable homes.',
+    fullStory: 'In aging Rust Belt housing stock, heating costs frequently swallow up to 25% of a working household’s monthly budget. Drafty windows and cracked furnaces force low-income families to rely on dangerous space heaters. Managed in partnership with certified Community Action crews, this project provides comprehensive blower-door diagnostics, heavy R-38 cellulose attic insulation, carbon monoxide alarms, and high-efficiency heat pump tune-ups. Every retrofitted house saves an average of $410 per year in utility costs while eliminating deadly freezing hazards.',
+    pillarId: 'families',
+    status: 'active',
+    state: 'OH',
+    city: 'Youngstown',
+    lat: 41.0998,
+    lng: -80.6495,
+    goalCents: 4200000,
+    raisedCents: 3580000,
+    donorsCount: 310,
+    daysRemaining: 19,
+    coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=800&q=80',
+    ],
+    budgetBreakdown: [
+      { category: 'Cellulose Insulation & Blower-Door Testing', percentage: 55, amountCents: 2310000 },
+      { category: 'Furnace & Heat Pump Safety Overhauls', percentage: 32, amountCents: 1344000 },
+      { category: 'Carbon Monoxide & Air Quality Detectors', percentage: 13, amountCents: 546000 },
+    ],
+    milestones: [
+      { id: 'm1', title: 'Energy Audits Completed', description: 'Inspected first 80 homes with thermal cameras.', targetDate: 'Aug 2026', completed: true },
+      { id: 'm2', title: 'Winter Readiness Pass', description: 'Target 160 total homes sealed prior to polar vortex.', targetDate: 'Nov 2026', completed: false },
+    ],
+    updates: [
+      {
+        id: 'u-wap-1',
+        date: '2026-10-05',
+        title: '78 homes insulated ahead of first frost',
+        content: 'Our certified crews finished insulating 78 Mahoning Valley homes this week, with pre/post blower tests demonstrating an average 38% draft reduction.',
+        author: 'Greg Kowalski, Lead Weatherization Auditor',
+      },
+    ],
+    createdAt: '2026-06-01',
+  },
+  {
+    id: 'proj-mobile-health-biometric',
+    slug: 'mobile-biometric-health-insulin-access',
+    title: 'Mobile Neighborhood Biometric Health & Insulin Emergency Access Clinic',
+    tagline: 'Bringing preventive screening vans and 30-day emergency prescription vouchers directly into underserved church and community center parking lots.',
+    summary: 'A mobile health clinic offering free A1C diabetic checks, cardiovascular screenings, and same-day medication assistance vouchers.',
+    fullStory: 'In urban food and medical deserts, uninsured neighbors often ration insulin or ignore soaring blood pressure until they suffer strokes or catastrophic ER admissions. This initiative operates a fully outfitted mobile health van staffed by volunteer nurse practitioners and bilingual community health navigators. We provide free biometric screenings, direct prescription voucher subsidies, and trauma-informed wellness counseling directly in neighborhood parking lots.',
+    pillarId: 'health',
+    status: 'active',
+    state: 'OH',
+    city: 'Dayton',
+    lat: 39.7589,
+    lng: -84.1916,
+    goalCents: 3600000,
+    raisedCents: 2980000,
+    donorsCount: 265,
+    daysRemaining: 16,
+    coverImage: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+    ],
+    budgetBreakdown: [
+      { category: 'Emergency Insulin & Chronic Medication Vouchers', percentage: 50, amountCents: 1800000 },
+      { category: 'Diagnostic Test Strips & Biometric Monitors', percentage: 28, amountCents: 1008000 },
+      { category: 'Mobile Medical Van Maintenance & Fuel', percentage: 22, amountCents: 792000 },
+    ],
+    milestones: [
+      { id: 'm1', title: 'Clinic Van Commissioned', description: 'Outfitted with refrigeration and diagnostic stations.', targetDate: 'May 2026', completed: true },
+      { id: 'm2', title: '1,000 Screenings Completed', description: 'Reached 1,000 neighborhood biometric exams.', targetDate: 'Sep 2026', completed: true },
+    ],
+    updates: [],
+    createdAt: '2026-05-20',
+  },
 ];
 
 export const DEMO_STORIES: Story[] = [
@@ -471,6 +545,42 @@ export const DEMO_STORIES: Story[] = [
     outcomeMetric: 'Restored independent mobility with permanent ADA exterior ramp',
     heroImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80',
     relatedProjectSlug: 'freedom-ramps-accessibility-initiative',
+    consentApproved: true,
+  },
+  {
+    id: 'story-arthur-furnace',
+    slug: 'arthur-beatrice-polar-vortex-warmth',
+    title: 'How a $420 emergency blower repair saved an 83-year-old couple from a -14° freeze',
+    pillarId: 'seniors',
+    participantName: 'Arthur & Beatrice L.',
+    participantRole: 'Retired Steelworker & Homemaker',
+    location: 'Youngstown',
+    state: 'OH',
+    year: 2026,
+    quote: 'Commercial contractors demanded $6,200 upfront when our furnace failed during the sub-zero polar vortex. ICA’s heating technician arrived in 3 hours and had warm air circulating before our water pipes froze.',
+    storyBody: 'Arthur (83) and Beatrice (81) live in a 1948 brick home on Youngstown’s South Side. When winter storm winds dropped wind chills to -14°F, their 25-year-old furnace failed. Bundled in three winter blankets and running dangerous gas stovetop burners, Arthur dialed our 2-1-1 emergency dispatch desk. Our certified HVAC rapid-response technician replaced the seized blower motor, installed high-efficiency filters, and tested the unit for carbon monoxide safety in under four hours.',
+    amountThatMadeItPossibleCents: 42000, // $420
+    outcomeMetric: 'Emergency furnace restoration preventing hypothermia and pipe rupture',
+    heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+    relatedProjectSlug: 'tri-county-home-weatherization-relief',
+    consentApproved: true,
+  },
+  {
+    id: 'story-soraya-nursing',
+    slug: 'soraya-single-mother-nursing-graduation',
+    title: 'From missing shifts over daycare fees to graduating top of her Licensed Practical Nursing class',
+    pillarId: 'families',
+    participantName: 'Soraya K.',
+    participantRole: 'Mother of two & Licensed Practical Nurse',
+    location: 'Dayton',
+    state: 'OH',
+    year: 2026,
+    quote: 'Tuition wasn’t what almost made me drop out—it was having nobody to watch my 4-year-old during 6 PM hospital clinicals. ICA paid the licensed evening daycare center directly for 8 months.',
+    storyBody: 'Soraya worked night inventory shifts while raising two children under 6. When she was accepted into the county hospital’s accelerated LPN nursing residency, mandatory clinical shifts took place from 4 PM to 10 PM, times when public childcare was closed. Through the ICA Working Parents Childcare Bridge, our donor circle provided monthly stipends directly to an accredited community daycare provider. Last month, Soraya passed her state licensing board exams on her first try and started her full-time ICU nursing career.',
+    amountThatMadeItPossibleCents: 32000, // $320
+    outcomeMetric: 'Funded 8 months of clinical evening childcare, enabling nurse licensing',
+    heroImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80',
+    relatedProjectSlug: 'detroit-parent-career-bridge',
     consentApproved: true,
   },
 ];
@@ -634,6 +744,34 @@ export const DEMO_VOLUNTEER_OPPORTUNITIES: any[] = [
     requirements: ['Compassionate demeanor', 'Brief 30-min online orientation required'],
     coordinatorName: 'Alicia Mendez',
   },
+  {
+    id: 'vol-5',
+    title: 'VITA Volunteer Tax Preparer & Financial Mobility Coach',
+    description: 'Help low-income families file taxes for free and claim 100% of their Earned Income Tax Credit without predatory fees.',
+    location: 'ICA Financial Literacy Center, Columbus, OH',
+    state: 'OH',
+    pillarId: 'families',
+    dateTime: 'Saturdays, Jan 30 – Apr 15, 9:00 AM – 2:00 PM',
+    durationHours: 5,
+    slotsAvailable: 12,
+    slotsFilled: 7,
+    requirements: ['Free 12-hr IRS self-paced certification', 'Basic math comfort', 'Detail-oriented'],
+    coordinatorName: 'Evelyn Ramirez, CPA',
+  },
+  {
+    id: 'vol-6',
+    title: 'Mobile Health Clinic Intake & Translation Assistant',
+    description: 'Assist nurses at community health vans with patient intake, vitals staging, and bilingual translation.',
+    location: 'Westside Community Centers, Dayton, OH',
+    state: 'OH',
+    pillarId: 'health',
+    dateTime: 'First & Third Thursdays, 1:00 PM – 5:00 PM',
+    durationHours: 4,
+    slotsAvailable: 6,
+    slotsFilled: 4,
+    requirements: ['Compassionate attitude', 'Spanish or Somali language skills a plus'],
+    coordinatorName: 'Nurse Practitioner Elena Chen',
+  },
 ];
 
 export const DEMO_EVENTS: any[] = [
@@ -672,6 +810,30 @@ export const DEMO_EVENTS: any[] = [
     coverImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
     capacity: 200,
     registeredCount: 165,
+  },
+  {
+    id: 'event-4',
+    slug: 'community-action-poverty-simulation-2026',
+    title: 'Community Action Poverty Simulation & Frontline Empathy Workshop',
+    description: 'An immersive 3-hour experiential simulation where civic leaders and donors navigate the daily realities of low-income families facing systemic trade-offs.',
+    location: 'Akron Community Center Auditorium, Akron, OH',
+    isVirtual: false,
+    eventDate: '2026-11-20T18:00:00Z',
+    coverImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
+    capacity: 85,
+    registeredCount: 58,
+  },
+  {
+    id: 'event-5',
+    slug: 'tri-county-fresh-gleaning-kickoff',
+    title: 'Tri-County Fresh Market Season Launch & Farm Partner Breakfast',
+    description: 'Celebrate our regional growers and volunteer drivers as we kick off the autumn harvest gleaning circuit across 8 rural county stops.',
+    location: 'Chillicothe Regional Market Pavillion & Stream',
+    isVirtual: true,
+    eventDate: '2026-10-28T14:00:00Z',
+    coverImage: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80',
+    capacity: 250,
+    registeredCount: 180,
   },
 ];
 
@@ -725,6 +887,40 @@ Weekend classes led by volunteer software engineers have already enrolled over 1
     coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
     author: 'David Washington',
     publishedAt: '2026-08-28T14:15:00Z',
+  },
+  {
+    id: 'news-4',
+    slug: 'weatherization-day-1200-homes-milestone',
+    title: 'National Weatherization Day: Over 1,200 Low-Income Families Secure High-Efficiency Insulation',
+    summary: 'Community Action agencies across the Midwest celebrate Weatherization Day by completing extensive energy retrofits, slashing winter heating bills by an average of $380.',
+    body: `WASHINGTON, D.C. — In recognition of National Weatherization Day, Community Action Agencies announced the completion of comprehensive energy retrofits for over 1,200 vulnerable households ahead of sub-zero winter temperatures.
+
+The Weatherization Assistance Program (WAP), managed at the frontline by certified Community Action crews, performs diagnostic blower-door tests, seals air bypasses, insulates attics, and upgrades obsolete heating equipment.
+
+"Weatherization is an economic stabilization lifeline," stated Denise Harmon, National Energy Policy Director. "For families on fixed pensions or low wages who spend up to 25% of their total monthly income on heating, these improvements permanently stabilize household budgets and keep children out of cold-related emergency rooms."
+
+Independent energy audits demonstrate that every dollar invested in weatherization yields $2.78 in non-energy health and safety benefits.`,
+    pillarId: 'families',
+    category: 'Press Release',
+    coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    author: 'National Community Action Partnership',
+    publishedAt: '2026-10-10T11:00:00Z',
+  },
+  {
+    id: 'news-5',
+    slug: 'diaper-bank-network-250k-deliveries',
+    title: 'Working Parents Diaper Bank & Formula Network Surpasses 250,000 Deliveries',
+    summary: 'Direct distribution logistics network provides critical supplies to 1,400 single-parent households across 6 counties.',
+    body: `DAYTON, OH — One in two American families struggles with diaper need, an overlooked barrier that prevents parents from utilizing licensed daycare (which requires parents to supply daily disposables).
+
+Impact Community Action’s mobile distribution network has officially passed 250,000 diapers, wipes, and pediatric formula packages delivered directly to neighborhood partner hubs.
+
+"When working mothers have predictable infant supplies, daycare attendance hits 96% and parents can sustain their hourly shifts without fear of termination," reported Community Services Director Tasha Vance.`,
+    pillarId: 'families',
+    category: 'Field Report',
+    coverImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80',
+    author: 'Tasha Vance, Program Director',
+    publishedAt: '2026-09-29T16:00:00Z',
   },
 ];
 

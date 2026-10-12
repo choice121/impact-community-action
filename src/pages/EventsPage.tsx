@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, Video, ArrowRight, CheckCircle2, X } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_EVENTS } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
 import { IKImage } from '../components/common/IKImage';
 import { formatDate } from '../lib/format';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 export const EventsPage: React.FC = () => {
+  const { events } = useLiveContent();
   const [registeringEvent, setRegisteringEvent] = useState<any | null>(null);
   const [attendeeName, setAttendeeName] = useState('');
   const [attendeeEmail, setAttendeeEmail] = useState('');
@@ -59,7 +60,7 @@ export const EventsPage: React.FC = () => {
 
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {DEMO_EVENTS.map((event) => (
+          {events.map((event) => (
             <div
               key={event.id}
               className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"

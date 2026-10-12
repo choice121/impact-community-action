@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Quote, Heart } from 'lucide-react';
-import { DEMO_STORIES } from '../../demo/demoData';
+import { useLiveContent } from '../../hooks/useLiveContent';
 import { IKImage } from '../common/IKImage';
 import { formatCurrency } from '../../lib/format';
 
 export const StoriesPreview: React.FC = () => {
+  const { stories } = useLiveContent();
   return (
     <section className="py-20 bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200/60 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +36,7 @@ export const StoriesPreview: React.FC = () => {
 
         {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {DEMO_STORIES.slice(0, 3).map((story) => (
+          {stories.slice(0, 3).map((story) => (
             <div
               key={story.id}
               className="group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"

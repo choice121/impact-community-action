@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Calendar, MapPin, Users, Video, ArrowLeft, CheckCircle2, Share2 } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_EVENTS } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
 import { IKImage } from '../components/common/IKImage';
 import { formatDate } from '../lib/format';
 
 export const EventDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const event = DEMO_EVENTS.find((e) => e.slug === slug || e.id === slug);
+  const { events } = useLiveContent();
+  const event = events.find((e) => e.slug === slug || e.id === slug);
 
   const [registered, setRegistered] = useState(false);
   const [name, setName] = useState('');

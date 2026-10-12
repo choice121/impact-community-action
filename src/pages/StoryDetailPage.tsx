@@ -2,20 +2,21 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Heart, MapPin, Calendar, ArrowRight, ShieldCheck, Quote, Sparkles } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_STORIES, DEMO_PILLARS } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
 import { IKImage } from '../components/common/IKImage';
 import { formatCurrency } from '../lib/format';
 
 export const StoryDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const story = DEMO_STORIES.find((s) => s.slug === slug || s.id === slug);
+  const { stories, pillars } = useLiveContent();
+  const story = stories.find((s) => s.slug === slug || s.id === slug);
 
   if (!story) {
     return <Navigate to="/stories" replace />;
   }
 
-  const pillar = DEMO_PILLARS.find((p) => p.id === story.pillarId);
-  const relatedStories = DEMO_STORIES.filter((s) => s.id !== story.id).slice(0, 2);
+  const pillar = pillars.find((p) => p.id === story.pillarId);
+  const relatedStories = stories.filter((s) => s.id !== story.id).slice(0, 2);
 
   return (
     <>

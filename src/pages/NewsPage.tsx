@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Newspaper, Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { DEMO_NEWS } from '../demo/demoData';
+import { useLiveContent } from '../hooks/useLiveContent';
 import { IKImage } from '../components/common/IKImage';
 import { formatDate } from '../lib/format';
 
 export const NewsPage: React.FC = () => {
+  const { news } = useLiveContent();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const categories = ['all', 'Press Release', 'Field Report', 'Community Story'];
 
-  const filteredNews = DEMO_NEWS.filter(
+  const filteredNews = news.filter(
     (item) => selectedCategory === 'all' || item.category === selectedCategory
   );
 
