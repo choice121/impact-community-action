@@ -91,37 +91,42 @@ export const Footer: React.FC = () => {
           {/* Col 3: Transparency & Accountability */}
           <div className="space-y-3">
             <p className="text-xs font-semibold uppercase tracking-wider text-teal-300">
-              Accountability
+              Get Involved & Impact
             </p>
             <ul className="space-y-2 text-xs">
+              <li>
+                <Link to="/volunteer" className="hover:text-white transition-colors text-amber-300 font-medium">
+                  ✦ Volunteer Opportunities
+                </Link>
+              </li>
+              <li>
+                <Link to="/events" className="hover:text-white transition-colors">
+                  Community Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/news" className="hover:text-white transition-colors">
+                  News & Field Dispatches
+                </Link>
+              </li>
               <li>
                 <Link to="/transparency" className="hover:text-white transition-colors">
                   Where Every Dollar Goes
                 </Link>
               </li>
               <li>
-                <Link to="/transparency" className="hover:text-white transition-colors">
-                  IRS Form 990 & Audited Books
-                </Link>
-              </li>
-              <li>
                 <Link to="/impact" className="hover:text-white transition-colors">
-                  Annual Impact Report
+                  Annual Impact Report & 990
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white transition-colors">
-                  Board & Governance
+                <Link to="/get-help" className="hover:text-white transition-colors">
+                  Assistance Application
                 </Link>
               </li>
               <li>
-                <Link to="/transparency#ratings" className="hover:text-white transition-colors">
-                  Charity Navigator 4-Star
-                </Link>
-              </li>
-              <li>
-                <Link to="/transparency#ratings" className="hover:text-white transition-colors">
-                  Candid / GuideStar Platinum
+                <Link to="/portal" className="hover:text-white transition-colors text-teal-300">
+                  Donor Portal
                 </Link>
               </li>
             </ul>

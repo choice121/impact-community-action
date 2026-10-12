@@ -572,3 +572,245 @@ export const DEMO_FINANCIALS: FinancialMetric = {
   livesImpacted: 265800,
   costPerOutcomeAverage: 42,
 };
+
+// ==========================================
+// PHASE 2 DEMO DATASETS
+// ==========================================
+
+export const DEMO_VOLUNTEER_OPPORTUNITIES: any[] = [
+  {
+    id: 'vol-1',
+    title: 'Eastside Food Hub Weekend Fresh Produce Packing',
+    description: 'Sort and bag farm-fresh produce into family parcels for rapid weekend neighborhood delivery.',
+    location: 'Eastside Community Logistics Hub, Columbus, OH',
+    state: 'OH',
+    pillarId: 'hunger',
+    dateTime: 'Every Saturday, 9:00 AM – 12:30 PM EST',
+    durationHours: 3.5,
+    slotsAvailable: 15,
+    slotsFilled: 11,
+    requirements: ['Comfortable standing for 3 hours', 'Closed-toe shoes required', 'Ages 14+ with guardian'],
+    coordinatorName: 'David Washington',
+  },
+  {
+    id: 'vol-2',
+    title: 'Freedom Ramp Assembly & Carpenter Assist',
+    description: 'Assist master carpenters with assembling weather-resistant modular aluminum wheelchair ramps for low-income veterans.',
+    location: 'Residential Field Sites, Pittsburgh, PA',
+    state: 'PA',
+    pillarId: 'seniors',
+    dateTime: 'Saturday, Nov 7, 8:30 AM – 1:30 PM EST',
+    durationHours: 5,
+    slotsAvailable: 8,
+    slotsFilled: 6,
+    requirements: ['Work gloves and safety glasses provided', 'Basic hand tool comfort helpful'],
+    coordinatorName: 'Tom Bradley, Lead Carpenter',
+  },
+  {
+    id: 'vol-3',
+    title: 'Youth Coding Lab Weekend Mentor (Virtual / In-Person)',
+    description: 'Mentor middle and high school students working on Python and robotics projects in our Appalachian tech centers.',
+    location: 'Kanawha County Public Library & Virtual Zoom',
+    state: 'WV',
+    pillarId: 'education',
+    dateTime: 'Bi-Weekly Sundays, 1:00 PM – 3:30 PM EST',
+    durationHours: 2.5,
+    slotsAvailable: 6,
+    slotsFilled: 4,
+    requirements: ['Background check required', 'Basic knowledge of Python, Scratch, or Web Tech'],
+    coordinatorName: 'Aisha Al-Mansoor',
+  },
+  {
+    id: 'vol-4',
+    title: 'Housing Eviction Court Mediation Navigator',
+    description: 'Greet families at the municipal courthouse intake table, hand out water and intake packets, and guide them to legal aid attorneys.',
+    location: 'Franklin County Municipal Courthouse, Columbus, OH',
+    state: 'OH',
+    pillarId: 'housing',
+    dateTime: 'Tuesday & Thursday Mornings, 8:30 AM – 11:30 AM',
+    durationHours: 3,
+    slotsAvailable: 4,
+    slotsFilled: 2,
+    requirements: ['Compassionate demeanor', 'Brief 30-min online orientation required'],
+    coordinatorName: 'Alicia Mendez',
+  },
+];
+
+export const DEMO_EVENTS: any[] = [
+  {
+    id: 'event-1',
+    slug: 'annual-community-action-gala-2026',
+    title: '2026 Annual Community Action Gala & Stewardship Dinner',
+    description: 'Join community leaders, participant speakers, and grassroots organizers for an evening celebrating resilience and transparent direct giving.',
+    location: 'The Columbus Athenaeum, 32 N 4th St, Columbus, OH',
+    isVirtual: false,
+    eventDate: '2026-11-14T18:00:00Z',
+    coverImage: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80',
+    capacity: 350,
+    registeredCount: 284,
+  },
+  {
+    id: 'event-2',
+    slug: 'winter-heating-relief-drive-kickoff',
+    title: 'Winter Warmth & Utility Shutoff Prevention Campaign Kickoff',
+    description: 'Our annual seasonal push to ensure zero households in our 5-county service area face freezing temperatures due to gas and electric shutoffs.',
+    location: 'Community Hub 4 & Live Stream',
+    isVirtual: true,
+    eventDate: '2026-11-01T15:00:00Z',
+    coverImage: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=1200&q=80',
+    capacity: 500,
+    registeredCount: 340,
+  },
+  {
+    id: 'event-3',
+    slug: 'appalachian-stem-maker-faire',
+    title: 'Appalachian Youth Tech Showcase & Robotics Derby',
+    description: 'Over 60 rural middle and high school students exhibit robotics, website builds, and automated garden sensor projects created in our tech hubs.',
+    location: 'Charleston Civic Cultural Center, Charleston, WV',
+    isVirtual: false,
+    eventDate: '2026-12-05T10:00:00Z',
+    coverImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
+    capacity: 200,
+    registeredCount: 165,
+  },
+];
+
+export const DEMO_NEWS: any[] = [
+  {
+    id: 'news-1',
+    slug: 'audited-financial-report-2025-released',
+    title: 'Independent 2025 Financial Audit Affirms 88% Programmatic Ratio for Third Consecutive Year',
+    summary: 'Third-party CPA firm completed unannounced audits, confirming top-tier fiduciary stewardship and zero material compliance findings.',
+    body: `COLUMBUS, OH — Impact Community Action has publicly released its 2025 Audited Financial Statement and IRS Form 990, confirming that 88.2% of all received contributions went directly into frontline programmatic relief.
+
+Management and governance expenses accounted for 6.9%, while fundraising expenses remained at 4.9%.
+
+"In a climate where donors are rightfully skeptical of bloated charity marketing, our commitment remains radical transparency," stated Dr. Marcus Holloway, Executive Director. "Every dollar donated has a documented path to a pantry cooler, a landlord back-rent release, or an elder's ramp."
+
+The full 36-page report and independent auditor's note are accessible in the Transparency Portal for immediate public download.`,
+    pillarId: 'general',
+    category: 'Press Release',
+    coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+    author: 'Elena Ramos-Chen, CPA',
+    publishedAt: '2026-10-01T12:00:00Z',
+  },
+  {
+    id: 'news-2',
+    slug: 'cuyahoga-eviction-bridge-expansion',
+    title: 'Cleveland Housing Court Pilot Expands to 24-Hour Digital Settlement Processing',
+    summary: 'New protocol allows landlords and tenants to agree to back-rent settlements digitally before eviction court hearings commence.',
+    body: `CLEVELAND, OH — Our Eviction Defense Bridge Fund has expanded its digital settlement processing in Cuyahoga County. Over 70% of eviction filings in municipal courts stem from arrears under $700 resulting from single medical or mechanic bills.
+
+Through the expanded bridge fund, court case coordinators can verify eligibility, draft payment covenants, and disburse electronic ACH settlements directly to property management companies within 24 hours.
+
+Over the past 6 months, this program has achieved a 94% housing retention rate among assisted households.`,
+    pillarId: 'housing',
+    category: 'Field Report',
+    coverImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+    author: 'Alicia Mendez, Housing Director',
+    publishedAt: '2026-09-18T09:30:00Z',
+  },
+  {
+    id: 'news-3',
+    slug: 'appalachian-libraries-satellite-hubs',
+    title: 'Four Rural Public Libraries Equipped with Solar Satellite Tech Workstations',
+    summary: 'Bridging the digital divide in rural West Virginia through collaborative library computer hub installations.',
+    body: `CHARLESTON, WV — In partnership with regional county library systems, ICA has completed the installation of four solar-assisted satellite broadband workstations across rural Appalachian counties.
+
+The facilities provide gigabit-speed connectivity, 3D printers, and Raspberry Pi coding workstations to students who otherwise lack home high-speed internet.
+
+Weekend classes led by volunteer software engineers have already enrolled over 140 local students for the autumn semester.`,
+    pillarId: 'education',
+    category: 'Community Story',
+    coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+    author: 'David Washington',
+    publishedAt: '2026-08-28T14:15:00Z',
+  },
+];
+
+export const DEMO_HELP_APPLICATIONS: any[] = [
+  {
+    id: 'help-app-1',
+    referenceNumber: 'ICA-HELP-184920',
+    pillarId: 'housing',
+    applicantName: 'Tanya Jenkins',
+    applicantEmail: 'tanya.j@example.com',
+    applicantPhone: '(614) 555-8392',
+    city: 'Columbus',
+    state: 'OH',
+    householdSize: 4,
+    urgency: 'immediate',
+    preferredContact: 'phone',
+    description: 'Received 3-day notice after single-mother grocery hours were cut. Arrears are $420.',
+    status: 'under_review',
+    assignedTo: 'Alicia Mendez',
+    internalNotes: 'Contacted landlord, verified lease, pending payment voucher disbursement.',
+    createdAt: '2026-10-09T14:20:00Z',
+  },
+  {
+    id: 'help-app-2',
+    referenceNumber: 'ICA-HELP-910245',
+    pillarId: 'hunger',
+    applicantName: 'Robert Vance',
+    applicantEmail: 'rvance72@example.com',
+    applicantPhone: '(216) 555-4019',
+    city: 'Cleveland',
+    state: 'OH',
+    householdSize: 2,
+    urgency: 'immediate',
+    preferredContact: 'text',
+    description: 'Elderly couple on fixed SSI; refrigerator broke and all food spoiled.',
+    status: 'approved',
+    assignedTo: 'David Washington',
+    internalNotes: 'Dispatched emergency pantry crate and mini-fridge replacement voucher.',
+    createdAt: '2026-10-10T09:15:00Z',
+  },
+  {
+    id: 'help-app-3',
+    referenceNumber: 'ICA-HELP-304812',
+    pillarId: 'health',
+    applicantName: 'Carlos Rivera',
+    applicantEmail: 'carlos.r@example.com',
+    applicantPhone: '(412) 555-9831',
+    city: 'Pittsburgh',
+    state: 'PA',
+    householdSize: 3,
+    urgency: 'week',
+    preferredContact: 'email',
+    description: 'Daughter requires specialized insulin formulation; insurance gap period.',
+    status: 'received',
+    internalNotes: 'New intake; awaiting advocate assignment.',
+    createdAt: '2026-10-11T11:00:00Z',
+  },
+];
+
+export const DEMO_AUDIT_LOG: any[] = [
+  {
+    id: 'audit-1',
+    action: 'donation_confirmed',
+    actorId: 'system',
+    entityType: 'donations',
+    entityId: 'don-1',
+    payload: { amountCents: 5000, receiptNumber: 'ICA-2026-894102', pillar: 'hunger' },
+    createdAt: '2026-10-11T16:30:00Z',
+  },
+  {
+    id: 'audit-2',
+    action: 'help_application_status_updated',
+    actorId: 'usr-alicia',
+    entityType: 'help_applications',
+    entityId: 'help-app-1',
+    payload: { oldStatus: 'received', newStatus: 'under_review', assignedTo: 'Alicia Mendez' },
+    createdAt: '2026-10-10T14:22:00Z',
+  },
+  {
+    id: 'audit-3',
+    action: 'project_milestone_completed',
+    actorId: 'usr-admin',
+    entityType: 'projects',
+    entityId: 'eastside-fresh-food-hub',
+    payload: { milestone: 'Walk-in Cooler Delivered & Calibrated' },
+    createdAt: '2026-10-08T11:15:00Z',
+  },
+];
+

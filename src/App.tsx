@@ -19,6 +19,12 @@ import { DonatePage } from './pages/DonatePage';
 import { DonateThankYouPage } from './pages/DonateThankYouPage';
 import { LoginPage } from './pages/LoginPage';
 import { PortalPage } from './pages/PortalPage';
+import { VolunteerPage } from './pages/VolunteerPage';
+import { EventsPage } from './pages/EventsPage';
+import { EventDetailPage } from './pages/EventDetailPage';
+import { NewsPage } from './pages/NewsPage';
+import { NewsDetailPage } from './pages/NewsDetailPage';
+import { AdminPage } from './pages/AdminPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { GetHelpPage } from './pages/GetHelpPage';
@@ -46,6 +52,12 @@ export default function App() {
                 <Route path="/donate/thank-you" element={<DonateThankYouPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/portal" element={<PortalPage />} />
+                <Route path="/volunteer" element={<VolunteerPage />} />
+                <Route path="/events" element={<EventsPage />} />
+                <Route path="/events/:slug" element={<EventDetailPage />} />
+                <Route path="/news" element={<NewsPage />} />
+                <Route path="/news/:slug" element={<NewsDetailPage />} />
+                <Route path="/admin" element={<AdminPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/get-help" element={<GetHelpPage />} />

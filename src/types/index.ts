@@ -149,3 +149,111 @@ export interface DonationRecord {
   createdAt: string;
   receiptNumber: string;
 }
+
+// ==========================================
+// PHASE 2 EXTENDED MODELS
+// ==========================================
+
+export interface VolunteerOpportunity {
+  id: string;
+  title: string;
+  description: string;
+  location: string;
+  state: string;
+  pillarId: CausePillarId;
+  dateTime: string;
+  durationHours: number;
+  slotsAvailable: number;
+  slotsFilled: number;
+  requirements?: string[];
+  coordinatorName: string;
+}
+
+export interface VolunteerSignup {
+  id: string;
+  opportunityId: string;
+  opportunityTitle?: string;
+  userId?: string;
+  volunteerName: string;
+  volunteerEmail: string;
+  volunteerPhone: string;
+  status: 'confirmed' | 'attended' | 'cancelled';
+  createdAt: string;
+}
+
+export interface VolunteerHoursRecord {
+  id: string;
+  userId: string;
+  opportunityTitle: string;
+  date: string;
+  hoursLogged: number;
+  status: 'approved' | 'pending';
+  pillarId: CausePillarId;
+}
+
+export interface HelpApplicationRecord {
+  id: string;
+  referenceNumber: string;
+  pillarId: CausePillarId;
+  applicantName: string;
+  applicantEmail: string;
+  applicantPhone: string;
+  city: string;
+  state: string;
+  householdSize: number;
+  urgency: 'immediate' | 'week' | 'ongoing';
+  preferredContact: 'phone' | 'email' | 'text';
+  description: string;
+  status: 'received' | 'under_review' | 'approved' | 'disbursed';
+  assignedTo?: string;
+  internalNotes?: string;
+  createdAt: string;
+}
+
+export interface CommunityEvent {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  location: string;
+  isVirtual: boolean;
+  eventDate: string;
+  coverImage: string;
+  capacity?: number;
+  registeredCount: number;
+}
+
+export interface NewsPost {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  body: string;
+  pillarId?: CausePillarId;
+  category: 'Press Release' | 'Field Report' | 'Community Story' | 'Policy';
+  coverImage: string;
+  author: string;
+  publishedAt: string;
+}
+
+export interface StorySubmissionRecord {
+  id: string;
+  pillarId: CausePillarId;
+  authorName: string;
+  locationCity: string;
+  storyBody: string;
+  firstNameOnly: boolean;
+  consentGranted: boolean;
+  status: 'pending_review' | 'approved' | 'rejected';
+  createdAt: string;
+}
+
+export interface AuditLogRecord {
+  id: string;
+  action: string;
+  actorId?: string;
+  entityType: string;
+  entityId: string;
+  payload: Record<string, any>;
+  createdAt: string;
+}

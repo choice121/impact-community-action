@@ -176,12 +176,30 @@ export const Header: React.FC = () => {
             </Link>
 
             <Link
-              to="/impact"
+              to="/volunteer"
               className={`px-3 py-1.5 rounded-lg transition-colors hover:text-[#13A89E] ${
-                location.pathname === '/impact' ? 'text-[#13A89E] font-semibold' : ''
+                location.pathname.startsWith('/volunteer') ? 'text-[#13A89E] font-semibold' : ''
               }`}
             >
-              Impact
+              Volunteer
+            </Link>
+
+            <Link
+              to="/events"
+              className={`px-3 py-1.5 rounded-lg transition-colors hover:text-[#13A89E] ${
+                location.pathname.startsWith('/events') ? 'text-[#13A89E] font-semibold' : ''
+              }`}
+            >
+              Events
+            </Link>
+
+            <Link
+              to="/news"
+              className={`px-3 py-1.5 rounded-lg transition-colors hover:text-[#13A89E] ${
+                location.pathname.startsWith('/news') ? 'text-[#13A89E] font-semibold' : ''
+              }`}
+            >
+              News
             </Link>
 
             <Link
@@ -200,15 +218,6 @@ export const Header: React.FC = () => {
               }`}
             >
               Get Help
-            </Link>
-
-            <Link
-              to="/about"
-              className={`px-3 py-1.5 rounded-lg transition-colors hover:text-[#13A89E] ${
-                location.pathname === '/about' ? 'text-[#13A89E] font-semibold' : ''
-              }`}
-            >
-              About
             </Link>
           </nav>
 
@@ -282,6 +291,24 @@ export const Header: React.FC = () => {
             Success Stories
           </Link>
           <Link
+            to="/volunteer"
+            className="block px-3 py-2 rounded-xl font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/40 dark:hover:bg-slate-800"
+          >
+            Volunteer Shifts
+          </Link>
+          <Link
+            to="/events"
+            className="block px-3 py-2 rounded-xl font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/40 dark:hover:bg-slate-800"
+          >
+            Community Events
+          </Link>
+          <Link
+            to="/news"
+            className="block px-3 py-2 rounded-xl font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/40 dark:hover:bg-slate-800"
+          >
+            News & Field Dispatches
+          </Link>
+          <Link
             to="/impact"
             className="block px-3 py-2 rounded-xl font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/40 dark:hover:bg-slate-800"
           >
@@ -298,6 +325,12 @@ export const Header: React.FC = () => {
             className="block px-3 py-2 rounded-xl font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/40 dark:hover:bg-slate-800"
           >
             Get Help (Assistance)
+          </Link>
+          <Link
+            to="/admin"
+            className="block px-3 py-2 rounded-xl font-medium text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/30"
+          >
+            Admin & Staff Dashboard
           </Link>
           <Link
             to="/about"
