@@ -1,0 +1,6 @@
+{
+  "name": "Impact Community Action",
+  "description": "Small acts. Real impact. A modern, transparent donor platform and community action 501(c)(3) nonprofit empowering local communities across 7 essential cause pillars.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

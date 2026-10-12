@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-brand-navy: #0B2545;
+  --color-brand-teal: #13A89E;
+  --color-brand-amber: #F4A340;
+  --color-brand-coral: #FF6B5B;
+  --color-brand-bg: #FAF7F2;
+  --color-brand-ink: #1B1F2A;
+
+  --color-pillar-hunger: #E8873A;
+  --color-pillar-housing: #2F6DB5;
+  --color-pillar-health: #D64F6A;
+  --color-pillar-education: #7A5CC7;
+  --color-pillar-families: #1E9E8A;
+  --color-pillar-disaster: #D9472B;
+  --color-pillar-seniors: #4C7A4F;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Ripple Effect Animations */
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.92;
+  }
+}
+
+.animate-ripple-1 {
+  animation: ripple-expand 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-ripple-2 {
+  animation: ripple-expand 3s cubic-bezier(0, 0.2, 0.8, 1) infinite 1s;
+}
+
+.animate-ripple-3 {
+  animation: ripple-expand 3s cubic-bezier(0, 0.2, 0.8, 1) infinite 2s;
+}
+
+/* Glassmorphism helpers */
+.glass-header {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Hide scrollbar for tabs navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
